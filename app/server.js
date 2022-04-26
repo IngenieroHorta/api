@@ -12,13 +12,13 @@ let port = process.env.port || 8080
 //         console.log("conexion exitosa");
 //     }
 // });
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
 
     conec.query('SELECT * FROM personaje', (err, result) => {
         if (err) {
             throw err;
         } else {
-            res.json( result.nombre );
+            res.json( result );
         }
     })
 });
